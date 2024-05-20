@@ -68,7 +68,11 @@ h1 {
     -webkit-text-stroke-width: 2px black;
     text-shadow: 0 0 10px #fff, 0 0 40px #00bcd4;
     margin-bottom: 20px;
-    margin-top: 30%;
+<<<<<<< HEAD
+    margin-top: 40vh;
+=======
+    margin-top: 40vh;
+>>>>>>> ab19a312dcc6225abf608f496e1703eec32737db
 }
 
 h3 {
