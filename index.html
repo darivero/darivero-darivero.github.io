@@ -4,25 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeatMe</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('imagenfondobeatme.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Capa negra semi transparente */
+        .capa-negra {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background-color: rgba(0, 0, 0, 0.6); /* Color negro con 60% de opacidad */
+            z-index: 1; /* Aseguramos que esté encima del contenido */
+        }
+
+        /* Contenedor para el contenido dentro del rectángulo negro */
+        .contenido {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        /* Estilo para el rectángulo negro */
+        .rectangulonegro {
+            width: 80%; /* Ancho del rectángulo en relación con el viewport */
+            max-width: 500px; /* Ancho máximo del rectángulo */
+            padding: 20px; /* Espacio interior del rectángulo */
+            background-color: rgba(0, 0, 0, 0.8); /* Color negro con 80% de opacidad */
+            border-radius: 10px; /* Bordes redondeados */
+            margin: 400px auto 40px; /* Margen superior de px, margen inferior de 40px, centrado horizontalmente */
+        }
+
+        /* Estilo para la imagen */
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px; /* Espacio debajo de la imagen */
+        }
+
+        /* Estilo específico para la imagen del producto */
+        .imagen-producto {
+            max-width: 100%; /* Limitamos el ancho máximo */
+            height: auto; /* Mantenemos la proporción */
+            display: block; /* Hacemos que la imagen sea un elemento de bloque */
+            margin: 0 auto 20px; /* Centramos horizontalmente y añadimos margen inferior */
+        }
+    </style>
 </head>
 <body>
-    <div class="menu-container">
-        <button class="menu-btn" onclick="toggleMenu()">&#9776; Menú</button>
-        <div class="menu-desplegable" id="menu">
-            <a href="instrucciones.html">Instrucciones</a>
-            <a href="contacto.html">Contacto</a>
+    <div class="capa-negra"></div> <!-- Capa negra semi transparente -->
+    <div class="contenido">
+        <div class="rectangulonegro">
+            <!-- Contenido dentro del rectángulo negro -->
+            <h2><img src="LOGOBEATME.jpg" alt="Logo BeatMe" class="logo"></h2>
+            <p>🎤🃏 ¡Bienvenidos a BeatMe, el juego de cartas que lleva el freestyle y las batallas de rap a otro nivel! 🎤🃏 
+                BeatMe es un innovador juego de cartas diseñado para todos los amantes del freestyle y las batallas de rap. Con 72 cartas únicas y 9 beats exclusivos, te desafiamos a improvisar, rimar y demostrar tus habilidades de rap en un entorno divertido y competitivo. 🌐 Visítanos en www.beatme.com.ar 📲 Síguenos en Instagram, TikTok y YouTube: @321beatme ¡Vamos a rimar y disfrutar juntos con BeatMe! 🎶✨ #321beatme #freestyle #rap #cardgame</p>
+            <img src="imagenProducto.jpg" alt="Imagen Producto" class="imagen-producto">
         </div>
     </div>
-    <div class="content-container">
-        <h1>BEAT ME</h1>
-        <h3>PREPÁRATE PARA LA BATALLA</h3>
-        <button class="beat-btn" onclick="toggleBeat()">BEAT</button>
-    </div>
-    <footer>
-        <h5>Todos los beats producidos por <b>@Soudbeats</b> son de libre uso por BeatMe®. No aptos para su comercialización.</h5>
-        <h5>Beatme® es una marca registrada por Games4Ds® @2024T</h5>
-    </footer>
-    <script src="scripts.js"></script>
 </body>
 </html>
