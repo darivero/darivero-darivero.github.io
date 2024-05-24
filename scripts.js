@@ -1,3 +1,5 @@
+
+//Listado de archivos .mp3 a usar - deben tener el nombre exacto
 let currentAudio = null;
 const beats = [
     '321_1_01.mp3',
@@ -10,7 +12,7 @@ const beats = [
     '321_8_01.mp3',
     '321_9_01.mp3'
 ];
-
+//genera un numero de orden de beat al azar
 function getRandomBeat() {
     const randomIndex = Math.floor(Math.random() * beats.length);
     return beats[randomIndex];
@@ -29,7 +31,7 @@ function toggleBeat() {
         currentAudio.play();
     }
 }
-
+// lo siguiente es para generar el boton ¨Menu¨  
 function toggleMenu() {
     const menu = document.getElementById('menu');
     if (menu.style.display === 'block') {
