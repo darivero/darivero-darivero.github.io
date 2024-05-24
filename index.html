@@ -6,13 +6,19 @@
     <title>BeatMe</title>
     <link rel="stylesheet" href="Styles.css"> <!-- Enlace al archivo CSS -->
     <style>
+        /* Tema Oscuro por defecto */
+        body {
+            background-color: #111;
+            color: #fff;
+        }
+
         .capa-negra {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.8); /* Cambiado a un negro más sólido */
             z-index: 1;
         }
 
@@ -29,8 +35,45 @@
             max-width: 700px; /* Ancho máximo del rectángulo */
             padding: 40px; /* Espacio interior del rectángulo */
             background-color: rgba(0, 0, 0, 0.8); /* Color negro con 80% de opacidad */
-            border-radius: 10px; /* Bordes redondeados */
-            margin: 100px auto 40px; /* Margen superior de px, margen inferior de 40px, centrado horizontalmente */
+            border-radius: 30px; /* Bordes redondeados */
+            margin: 70px auto 40px; /* Margen superior, margen inferior de 40px, centrado horizontalmente */
+        }
+
+        .boton {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 15px; /* Reducido el padding para hacer el botón más pequeño */
+            font-size: 14px; /* Tamaño de fuente reducido */
+            border-radius: 25px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px; /* Posición en la esquina superior izquierda */
+            left: 20px; /* Posición en la esquina superior izquierda */
+            overflow: hidden;
+            transition: color 0.4s, border-color 0.4s;
+        }
+
+        .boton::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #00c6ff;
+            z-index: -1;
+            border-radius: 25px;
+            transition: transform 0.4s;
+        }
+
+        .boton:hover {
+            color: #00c6ff;
+            border-color: #00c6ff;
+        }
+
+        .boton:hover::before {
+            transform: scaleX(1.2) scaleY(1.5);
         }
     </style>
 </head>
@@ -39,17 +82,33 @@
     <div class="contenido">
         <div class="rectangulonegro">
             <!-- Contenido dentro del rectángulo negro -->
-            <h1>Beat Me</h1>
             <img src="beatmenegro.jpg" alt="Logo BeatMe" class="logo" width="350" height="250">
             <p><h3>🎤🃏 ¡Bienvenidos a BeatMe, el juego de cartas que lleva el freestyle y las batallas de rap a otro nivel! 🎤🃏 
                 BeatMe es un innovador juego de cartas diseñado para todos los amantes del freestyle y las batallas de rap. 
                 Con 72 cartas únicas y 9 beats exclusivos, te desafiamos a improvisar, rimar y demostrar tus habilidades de rap en un entorno divertido y competitivo. 
                 🌐 Visítanos en www.beatme.com.ar 📲 Síguenos en Instagram, TikTok y YouTube: @321beatme ¡Vamos a rimar y disfrutar juntos con BeatMe! 🎶✨ #321beatme #freestyle #rap #cardgame<h3></p>
             <div class="imagen-producto-contenedor">
-                <button class="boton">¡Consigue el tuyo aquí!</button> <!-- Cambia el texto aquí -->
+                <button class="boton" id="cambiarTamanio">¡Consigue el tuyo aquí!</button> <!-- Cambia el texto aquí -->
                 <img src="productonegro.jpg" alt="Imagen Producto" class="imagen-producto" width="350" height="250">
             </div>
+            <img src="Cartabeatme.jpg" alt="" >
         </div>
     </div>
+
+    <script>
+        // Función para cambiar el tamaño del botón
+        document.getElementById('cambiarTamanio').addEventListener('click', function() {
+            var boton = document.querySelector('.boton');
+            if (boton.style.padding === '10px 15px') {
+                boton.style.padding = '20px 30px'; // Cambia el padding para hacer el botón más grande
+                boton.style.fontSize = '16px'; // Aumenta el tamaño de la fuente
+                // Aquí puedes agregar más cambios de estilo según tus necesidades
+            } else {
+                boton.style.padding = '10px 15px'; // Vuelve al padding original
+                boton.style.fontSize = '14px'; // Vuelve al tamaño de fuente original
+                // Aquí puedes agregar más cambios de estilo según tus necesidades
+            }
+        });
+    </script>
 </body>
 </html>
