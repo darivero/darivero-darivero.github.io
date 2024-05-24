@@ -151,12 +151,12 @@ footer h5 {
 .imagen-producto-contenedor {
     position: relative;
     display: inline-block;
-    width: 50%;
+    width: 100%;
 }
 
 .imagen-producto {
     max-width: 50%;
-    height: auto;
+    height: 50%;
     display: block;
     margin: 0 auto 20px;
 }
