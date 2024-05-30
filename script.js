@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.querySelector('.menu-btn');
     const menuContent = document.querySelector('.menu-content');
@@ -23,20 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
         menuBtn.classList.toggle('active');
     });
 
+    function toggleButtonImage() {
+        if (isPlaying) {
+            playBtn.style.backgroundImage = "url('boton-pausa.png')"; // Cambia a la imagen de stop
+        } else {
+            playBtn.style.backgroundImage = "url('boton-play.png')"; // Cambia a la imagen de play
+        }
+    }
+
     playBtn.addEventListener('click', () => {
         if (isPlaying) {
             audio.pause();
-            playBtn.textContent = 'PLAY';
+            playBtn.textContent = ' ';
         } else {
             const randomTrack = Math.floor(Math.random() * tracks.length);
             audio = new Audio(tracks[randomTrack]);
             audio.play();
-            playBtn.textContent = 'STOP';
+            playBtn.textContent = ' ';
             audio.addEventListener('ended', () => {
                 playBtn.textContent = 'PLAY';
                 isPlaying = false;
+                toggleButtonImage();
             });
         }
         isPlaying = !isPlaying;
+        toggleButtonImage();
     });
 });
